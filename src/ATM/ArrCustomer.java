@@ -1,15 +1,8 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ATM;
 
 import java.util.Scanner;
 
-/**
- *
- * @author TOSHIBA
- */
 public class ArrCustomer {
 
     int N = 4;

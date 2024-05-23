@@ -1,25 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ATM;
 
 import java.util.Scanner;
 
-/**
- *
- * @author TOSHIBA
- */
 public class Customer {
         String norek;
         String nama;
         String pin;
         double saldo;
 
-        Customer() {
+        Customer() { 
         }
 
-        Customer(String No, String Name, String Pinku, double Saldonya) {
+        Customer(String No, String Name, String Pinku, double Saldonya) { 
             this.norek = No;
             this.nama = Name;
             this.pin = Pinku;
