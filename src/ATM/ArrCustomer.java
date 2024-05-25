@@ -47,6 +47,45 @@ public class ArrCustomer {
         
         a[i].TampilRec();
     }
+    
+    void Transfer(int i) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nomor rekening tujuan anda : ");
+        String norekTujuan = sc.next();
+        System.out.print("Jumlah yang ingin ditransfer : ");
+        double jumlahTransfer = sc.nextDouble();
+
+        boolean bertemu = false;
+        int indexTujuan = -1;
+
+        for (int j = 0; j < N; j++) {
+            if (a[j].norek.equals(norekTujuan)) {
+                    bertemu = true;
+                    indexTujuan = j;
+                    break;
+            }
+        }
+
+        if (bertemu) {
+                if (a[i].saldo >= jumlahTransfer) {
+                        a[i].saldo -= jumlahTransfer;
+                        a[indexTujuan].saldo += jumlahTransfer;
+                        System.out.println("");
+                        System.out.println("Transfer berhasil : ");
+                        System.out.println("Saldo pengirim : ");
+                        a[i].TampilRec();
+                        System.out.println("");
+                        System.out.println("Saldo penerima : ");
+                        a[indexTujuan].TampilRec();
+                } else {
+                        System.out.println("Saldo tidak mencukupi untuk melakukan transaksi : ");
+                }
+        } else {
+                    System.out.println("Nomor rekening tujuan tidak ditemukan : ");
+        }
+        
+        a[i].TampilRec();
+    }
 
     int Menu() {
         Scanner sc = new Scanner(System.in);
@@ -55,7 +94,8 @@ public class ArrCustomer {
         System.out.println("1. Tampil Array ");
         System.out.println("2. Pengambilan ");
         System.out.println("3. Setor ");
-        System.out.println("4. Cek Saldo ");
+        System.out.println("4. Transfer ");
+        System.out.println("5. Cek Saldo ");
         System.out.println("0. Keluar ");
         System.out.print("Pilihan anda ");
         int X = sc.nextInt();
@@ -116,6 +156,9 @@ public class ArrCustomer {
                         A.Setor(active);
                         break;
                     case 4:
+                        A.Transfer(active);
+                        break;
+                    case 5:
                         A.CekSaldo(active);
                         break;
                     case 0:
